@@ -35,9 +35,9 @@
             <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <form class="card-body">
             <fieldset class="fieldset">
-                <label class="label">Mobile Number</label>
+                <label class="label font-semibold text-lg">Mobile Number</label>
                 <input id="loginNum" value="01973201831" type="number" class="input" placeholder="Enter your number" required/>
-                <label  class="label">4 Digit Pin</label>
+                <label  class="label font-semibold text-lg">4 Digit Pin</label>
                 <input id='loginPin' value="1234" type="password" class="input" placeholder="Enter 4 Digit Pin" required/>
                 <button id="loginBtn" class="btn bg-blue-500 text-white mt-4">Login</button>
             </fieldset>
@@ -46,6 +46,25 @@
         </div>    
         </div>  
     </section>
-    <script src="payoo.js"></script>
+    <script >
+    //login part
+        document.getElementById('loginBtn').addEventListener('click',
+        function(even){
+            even.preventDefault();
+            const loginNum = document.getElementById('loginNum').value;
+            const loginPin = document.getElementById('loginPin').value;
+            if(loginNum.length === 11){
+                if(loginPin == 1234){
+                    window.location.href = 'main.html';
+                    alert('Login Successfully')
+                }else{
+                    alert('Invalid Pin')
+                }
+            }else{
+                alert('Invalid Account Number');
+            }
+        }
+    )
+    </script>
 </body>
 </html>
