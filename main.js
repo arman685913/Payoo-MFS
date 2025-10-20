@@ -9,12 +9,7 @@ const logOut = document.getElementById('logout').addEventListener('click',
 //add money
 document.getElementById('addMoney').addEventListener('click',
     function(){
-        const addMoneyHidden = document.getElementById('addMoneyHidden');
-        const cashOutHidden = document.getElementById('cashOutHidden');
-        const transferHidden = document.getElementById('transferHidden');
-        addMoneyHidden.classList.remove('hidden');
-        cashOutHidden.classList.add('hidden');
-        transferHidden.classList.add('hidden');
+        hidden('addMoneyHidden')
     }
 )
 //----------//
@@ -47,12 +42,7 @@ document.getElementById('addButton').addEventListener('click',
 // cash out
 document.getElementById('cashOut').addEventListener('click',
     function(){
-        const cashOutHidden = document.getElementById('cashOutHidden');
-        const addMoneyHidden = document.getElementById('addMoneyHidden');
-        const transferHidden = document.getElementById('transferHidden');
-        addMoneyHidden.classList.add('hidden');
-        transferHidden.classList.add('hidden');
-        cashOutHidden.classList.remove('hidden');
+        hidden('cashOutHidden');
     }
 )
 //-----------//
@@ -85,12 +75,7 @@ document.getElementById('outButton').addEventListener('click',
 //transfer money
 document.getElementById('transfer').addEventListener('click',
     function(){
-        const transferHidden = document.getElementById('transferHidden');
-        const cashOutHidden = document.getElementById('cashOutHidden');
-        const addMoneyHidden = document.getElementById('addMoneyHidden');
-        addMoneyHidden.classList.add('hidden');
-        cashOutHidden.classList.add('hidden');
-        transferHidden.classList.remove('hidden');
+        hidden('transferHidden');
     }
 )
 //----------//
@@ -106,7 +91,7 @@ document.getElementById('transferButton').addEventListener('click',
                 if(transferAmount > 0 && amount >= transferAmount){
                     document.getElementById('amount').innerText = amount - transferAmount;
                     document.getElementById('transferAmount').value = '';
-                    alert('Cash-Out Successfully')
+                    alert('Transfer Money Successfully')
                 } else {
                     alert('Invalid Amount')
                     document.getElementById('transferAmount').value = '';
@@ -117,5 +102,42 @@ document.getElementById('transferButton').addEventListener('click',
         }else{
             alert('Invalid Account Number');
         }
+    }
+)
+
+//bonus 
+document.getElementById('bonus').addEventListener('click',
+    function(){
+        hidden('bonusHidden');
+    }
+)
+//----------//
+document.getElementById('bonusButton').addEventListener('click',
+    function(){
+        const coupon = valueById('couponNo');
+        const amount = innerTextById('amount');
+        if(coupon <= 5 && 1 >= coupon){
+            if(coupon === 1){
+                document.getElementById('amount').innerText = amount + 1000;
+                document.getElementById('couponNo').value = '';
+                alert('You received a bonus of 1000 taka.');
+            } else if(coupon === 2){
+                document.getElementById('amount').innerText = amount + 2000;
+                document.getElementById('couponNo').value = '';
+                alert('You received a bonus of 2000 taka.');
+            } else if(coupon === 3){
+                document.getElementById('amount').innerText = amount + 3000;
+                document.getElementById('couponNo').value = '';
+                alert('You received a bonus of 3000 taka.');
+            } else if(coupon === 4){
+                document.getElementById('amount').innerText = amount + 4000;
+                document.getElementById('couponNo').value = '';
+                alert('You received a bonus of 4000 taka.');
+            } else {
+                document.getElementById('amount').innerText = amount + 5000;
+                document.getElementById('couponNo').value = '';
+                alert('You received a bonus of 5000 taka.');
+            }
+        } else{ alert('Please enter your coupon number between 1 and 5.')}
     }
 )

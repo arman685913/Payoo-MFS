@@ -56,7 +56,8 @@
         <img src="Payoo-MFS-Resources-main/assets/money1.png" class="w-7 h-7 mb-1" alt="">
         <p class="text-sm font-medium text-gray-700">Transfer Money</p>
       </div>
-      <div class="cursor-pointer flex flex-col items-center justify-center p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-gray-100 transition">
+      <!-- Bonus -->
+      <div id="bonus" class="cursor-pointer flex flex-col items-center justify-center p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-gray-100 transition">
         <img src="Payoo-MFS-Resources-main/assets/bonus1.png" class="w-7 h-7 mb-1" alt="">
         <p class="text-sm font-medium text-gray-700">Get Bonus</p>
       </div>
@@ -70,89 +71,107 @@
       </div>
     </section>
   </section>
-
-<!-- Add Money Section -->
-<div id="addMoneyHidden" class="hidden">
-    <section class="py-6">
-    <h1 class="text-lg font-semibold">Add Money</h1>
-  </section>
-
-  <section class="p-6 shadow-lg rounded-xl bg-white">
-    <div class="space-y-4">
-      <div>
-        <label class="block font-semibold text-gray-700">Select A Bank</label>
-        <select class="select w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5">
-          <option disabled selected>Select bank</option>
-          <option value="Bkash">Bkash</option>
-          <option value="Nagad">Nagad</option>
-          <option value="DBBL">DBBL</option>
-        </select>
+<!-- transaction part-->
+<section id="transaction">
+  <!-- Add Money Section -->
+    <section id="addMoneyHidden" >
+        <div class="py-6">
+        <h1 class="text-lg font-semibold">Add Money</h1>
       </div>
-      <div>
-        <label class="block font-semibold text-gray-700">Bank Account Number</label>
-        <input id="addNum" type="number" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" value="01973201831" placeholder="Enter 11 digit account number" required>
+      <div class="p-6 shadow-lg rounded-xl bg-white">
+        <div class="space-y-4">
+          <div>
+            <label class="block font-semibold text-gray-700">Select A Bank</label>
+            <select class="select w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5">
+              <option disabled selected>Select bank</option>
+              <option value="Bkash">Bkash</option>
+              <option value="Nagad">Nagad</option>
+              <option value="DBBL">DBBL</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700">Bank Account Number</label>
+            <input id="addNum" type="number" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" value="01973201831" placeholder="Enter 11 digit account number" required>
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700">Amount to Add</label>
+            <input id="addAmount" type="number" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" placeholder="Add Amount" required>
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700">Pin Number</label>
+            <input id="addPin" value="1234" type="password" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" placeholder="Enter 4 Digit Pin" required>
+          </div>
+          <button id="addButton" class="bg-blue-600 text-lg text-white font-semibold rounded-3xl py-3 w-full">Add Money</button>
+        </div>
       </div>
-      <div>
-        <label class="block font-semibold text-gray-700">Amount to Add</label>
-        <input id="addAmount" type="number" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" placeholder="Add Amount" required>
+    </section>
+  <!-- Cash Out Section -->
+    <section id="cashOutHidden" style="display: none;">
+        <div class="py-6">
+        <h1 class="text-lg font-semibold">Cash Out</h1>
+        </div>
+  
+      <div class="p-6 shadow-lg rounded-xl bg-white">
+        <div class="space-y-4">
+          <div>
+            <label class="block font-semibold text-gray-700">Agent Account Number</label>
+            <input id="outNum" type="number" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" value="01973201831" placeholder="Enter 11 digit account number" required>
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700">Amount</label>
+            <input id="outAmount" type="number" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" placeholder="Enter amount to withdraw" required>
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700">Pin Number</label>
+            <input id="outPin" value="1234" type="password" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" placeholder="Enter 4 Digit Pin" required>
+          </div>
+          <button id="outButton" class="bg-blue-600 text-lg text-white font-semibold rounded-3xl py-3 w-full">Withdraw Money</button>
+        </div>
       </div>
-      <div>
-        <label class="block font-semibold text-gray-700">Pin Number</label>
-        <input id="addPin" value="1234" type="password" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" placeholder="Enter 4 Digit Pin" required>
+    </section>
+  <!-- Transfer Section -->
+    <section id="transferHidden" style="display: none;" >
+        <div class="py-6">
+        <h1 class="text-lg font-semibold">Transfer Money</h1>
       </div>
-      <button id="addButton" class="bg-blue-600 text-lg text-white font-semibold rounded-3xl py-3 w-full">Add Money</button>
-    </div>
-  </section>
-</div>
-<!-- Cash Out Section -->
- <div id="cashOutHidden" class="hidden">
-    <section class="py-6">
-    <h1 class="text-lg font-semibold">Cash Out</h1>
-  </section>
-
-  <section class="p-6 shadow-lg rounded-xl bg-white">
-    <div class="space-y-4">
-      <div>
-        <label class="block font-semibold text-gray-700">Agent Account Number</label>
-        <input id="outNum" type="number" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" value="01973201831" placeholder="Enter 11 digit account number" required>
+  
+      <div class="p-6 shadow-lg rounded-xl bg-white">
+        <div class="space-y-4">
+          <div>
+            <label class="block font-semibold text-gray-700">User Account Number</label>
+            <input id="transferNum" type="number" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" value="01973201831" placeholder="Enter 11 digit account number" required>
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700">Amount</label>
+            <input id="transferAmount" type="number" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" placeholder="Enter amount to withdraw" required>
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700">Pin Number</label>
+            <input id="transferPin" value="1234" type="password" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" placeholder="Enter 4 Digit Pin" required>
+          </div>
+          <button id="transferButton" class="bg-blue-600 text-lg text-white font-semibold rounded-3xl py-3 w-full">Send Now</button>
+        </div>
       </div>
-      <div>
-        <label class="block font-semibold text-gray-700">Amount</label>
-        <input id="outAmount" type="number" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" placeholder="Enter amount to withdraw" required>
+    </section>
+  <!-- Get Bonus Section -->
+   <section id="bonusHidden" style="display: none;" >
+        <div class="py-6">
+        <h1 class="text-lg font-semibold">Get Bonus</h1>
       </div>
-      <div>
-        <label class="block font-semibold text-gray-700">Pin Number</label>
-        <input id="outPin" value="1234" type="password" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" placeholder="Enter 4 Digit Pin" required>
+  
+      <div class="p-6 shadow-lg rounded-xl bg-white">
+        <div class="space-y-4">
+          <div>
+            <label class="block font-semibold text-gray-700">Enter Bonus Coupon No.</label>
+            <input id="couponNo" type="number" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" placeholder="Enter Bonus Coupon No. [1 to 5]" required>
+          </div>
+          <button id="bonusButton" class="bg-blue-600 text-lg text-white font-semibold rounded-3xl py-3 w-full">Get Bonus</button>
+        </div>
       </div>
-      <button id="outButton" class="bg-blue-600 text-lg text-white font-semibold rounded-3xl py-3 w-full">Withdraw Money</button>
-    </div>
-  </section>
-</div>
-<!-- Transfer Section -->
-  <div id="transferHidden" >
-    <section class="py-6">
-    <h1 class="text-lg font-semibold">Transfer Money</h1>
-  </section>
-
-  <section class="p-6 shadow-lg rounded-xl bg-white">
-    <div class="space-y-4">
-      <div>
-        <label class="block font-semibold text-gray-700">User Account Number</label>
-        <input id="transferNum" type="number" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" value="01973201831" placeholder="Enter 11 digit account number" required>
-      </div>
-      <div>
-        <label class="block font-semibold text-gray-700">Amount</label>
-        <input id="transferAmount" type="number" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" placeholder="Enter amount to withdraw" required>
-      </div>
-      <div>
-        <label class="block font-semibold text-gray-700">Pin Number</label>
-        <input id="transferPin" value="1234" type="password" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" placeholder="Enter 4 Digit Pin" required>
-      </div>
-      <button id="transferButton" class="bg-blue-600 text-lg text-white font-semibold rounded-3xl py-3 w-full">Send Now</button>
-    </div>
-  </section>
-</div>
+    </section>
+</section>
 </main>
+<script src="utilities/toogle.js"></script>
 <script src="utilities/utilities.js"></script>
 <script src="main.js"></script>
 </body>
