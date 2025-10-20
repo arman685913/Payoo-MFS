@@ -18,6 +18,8 @@
 
 <body class="py-6">
 <main class="max-w-md w-full mx-auto p-6 min-h-screen">
+
+<!-- OPtion part -->
   <section class="py-6 bg-white shadow-lg rounded-xl">  
     <!-- Header -->
     <header class="flex justify-between items-center p-4 border-b">
@@ -61,20 +63,26 @@
         <img src="Payoo-MFS-Resources-main/assets/bonus1.png" class="w-7 h-7 mb-1" alt="">
         <p class="text-sm font-medium text-gray-700">Get Bonus</p>
       </div>
-      <div class="cursor-pointer flex flex-col items-center justify-center p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-gray-100 transition">
+      <!-- Pay Bill -->
+      <div id="payBill" class="cursor-pointer flex flex-col items-center justify-center p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-gray-100 transition">
         <img src="Payoo-MFS-Resources-main/assets/purse1.png" class="w-7 h-7 mb-1" alt="">
         <p class="text-sm font-medium text-gray-700">Pay Bill</p>
       </div>
-      <div class="cursor-pointer flex flex-col items-center justify-center p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-gray-100 transition">
+      <!-- Transactions -->
+      <div id="transactions" class="cursor-pointer flex flex-col items-center justify-center p-3 bg-gray-50 rounded-lg shadow-sm hover:bg-gray-100 transition">
         <img src="Payoo-MFS-Resources-main/assets/transaction1.png" class="w-7 h-7 mb-1" alt="">
         <p class="text-sm font-medium text-gray-700">Transactions</p>
       </div>
     </section>
   </section>
+
+
+
 <!-- transaction part-->
 <section id="transaction">
+
   <!-- Add Money Section -->
-    <section id="addMoneyHidden" >
+    <section id="addMoneyHidden">
         <div class="py-6">
         <h1 class="text-lg font-semibold">Add Money</h1>
       </div>
@@ -82,8 +90,7 @@
         <div class="space-y-4">
           <div>
             <label class="block font-semibold text-gray-700">Select A Bank</label>
-            <select class="select w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5">
-              <option disabled selected>Select bank</option>
+            <select id="bank" class="select w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5">
               <option value="Bkash">Bkash</option>
               <option value="Nagad">Nagad</option>
               <option value="DBBL">DBBL</option>
@@ -105,12 +112,13 @@
         </div>
       </div>
     </section>
-  <!-- Cash Out Section -->
+    
+    <!-- Cash Out Section -->
     <section id="cashOutHidden" style="display: none;">
-        <div class="py-6">
+      <div class="py-6">
         <h1 class="text-lg font-semibold">Cash Out</h1>
-        </div>
-  
+      </div>
+      
       <div class="p-6 shadow-lg rounded-xl bg-white">
         <div class="space-y-4">
           <div>
@@ -129,6 +137,7 @@
         </div>
       </div>
     </section>
+
   <!-- Transfer Section -->
     <section id="transferHidden" style="display: none;" >
         <div class="py-6">
@@ -153,6 +162,7 @@
         </div>
       </div>
     </section>
+
   <!-- Get Bonus Section -->
    <section id="bonusHidden" style="display: none;" >
         <div class="py-6">
@@ -168,6 +178,48 @@
           <button id="bonusButton" class="bg-blue-600 text-lg text-white font-semibold rounded-3xl py-3 w-full">Get Bonus</button>
         </div>
       </div>
+    </section>
+
+    <!-- Pay Bill Section -->
+
+    <section id="payBillHidden" style="display: none;">
+        <div class="py-6">
+        <h1 class="text-lg font-semibold">Pay Bill</h1>
+      </div>
+      <div class="p-6 shadow-lg rounded-xl bg-white">
+        <div class="space-y-4">
+          <div>
+            <label class="block font-semibold text-gray-700">Select To Pay</label>
+            <select id="paySelect" class="select w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5">
+              <option value="Electricity Bill">Electricity Bill</option>
+              <option value="Gas Bill">Gas Bill</option>
+              <option value="Bank Deposit">Bank Deposit</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700">Biller Account Number</label>
+            <input id="payNum" type="number" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" value="01973201831" placeholder="Enter 11 digit account number" required>
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700">Amount to Pay</label>
+            <input id="payAmount" type="number" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" placeholder="Add Amount to pay" required>
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700">Pin Number</label>
+            <input id="payPin" value="1234" type="password" class="input input-bordered w-full mt-1 rounded-3xl py-3 bg-[#F4F5F7] px-5" placeholder="Enter 4 Digit Pin" required>
+          </div>
+          <button id="payButton" class="bg-blue-600 text-lg text-white font-semibold rounded-3xl py-3 w-full">Pay Now</button>
+        </div>
+      </div>
+    </section>
+
+  <!-- Transactions Section -->
+   <section id="transactionsHidden" style="display: none;">
+        <div class="py-6 flex items-center justify-between">
+        <h1 class="text-lg font-semibold">Transactions History</h1>
+        <p class="text-gray-400">View All</p>
+      </div>
+
     </section>
 </section>
 </main>
