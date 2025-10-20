@@ -6,8 +6,7 @@ const logOut = document.getElementById('logout').addEventListener('click',
     }
 )
 
-
-// add money
+//add money
 document.getElementById('addMoney').addEventListener('click',
     function(){
         const addMoneyHidden = document.getElementById('addMoneyHidden');
@@ -19,18 +18,16 @@ document.getElementById('addMoney').addEventListener('click',
     }
 )
 //----------//
-document.getElementById('addButton').addEventListener('click',
-    function(e){
-        const amt = document.getElementById('amount').innerText;
-        const amount = parseInt(amt);
+document.getElementById('addButton').addEventListener('click', 
+    function(even){
         const addNum = document.getElementById('addNum').value;
-        const Pin = document.getElementById('addPin').value;
-        const addAmt = document.getElementById('addAmount').value;
-        const addAmount = parseInt(addAmt);
+        const addAmount = valueById('addAmount');
+        const pin = valueById('addPin');
+        const amount = innerTextById('amount');
 
         if(addNum.length === 11){
-            if(Pin == 1234){
-                if(addAmount > 0 ){
+            if(pin === 1234){
+                if(addAmount > 0){
                     document.getElementById('amount').innerText = amount + addAmount;
                     document.getElementById('addAmount').value = '';
                     alert('Add Money Successfully')
@@ -47,7 +44,7 @@ document.getElementById('addButton').addEventListener('click',
     }
 )
 
-//cash out
+// cash out
 document.getElementById('cashOut').addEventListener('click',
     function(){
         const cashOutHidden = document.getElementById('cashOutHidden');
@@ -58,18 +55,16 @@ document.getElementById('cashOut').addEventListener('click',
         cashOutHidden.classList.remove('hidden');
     }
 )
-//----------//
-document.getElementById('outButton').addEventListener('click',
-    function(e){
-        const amt = document.getElementById('amount').innerText;
-        const amount = parseInt(amt);
+//-----------//
+document.getElementById('outButton').addEventListener('click', 
+    function(even){
         const outNum = document.getElementById('outNum').value;
-        const Pin = document.getElementById('outPin').value;
-        const outAmt = document.getElementById('outAmount').value;
-        const outAmount = parseInt(outAmt);
+        const outAmount = valueById('outAmount');
+        const pin = valueById('outPin');
+        const amount = innerTextById('amount');
 
         if(outNum.length === 11){
-            if(Pin == 1234){
+            if(pin === 1234){
                 if(outAmount > 0 && amount >= outAmount){
                     document.getElementById('amount').innerText = amount - outAmount;
                     document.getElementById('outAmount').value = '';
@@ -87,7 +82,7 @@ document.getElementById('outButton').addEventListener('click',
     }
 )
 
-//transfer
+//transfer money
 document.getElementById('transfer').addEventListener('click',
     function(){
         const transferHidden = document.getElementById('transferHidden');
@@ -99,21 +94,19 @@ document.getElementById('transfer').addEventListener('click',
     }
 )
 //----------//
-document.getElementById('transferButton').addEventListener('click',
-    function(e){
-        const amt = document.getElementById('amount').innerText;
-        const amount = parseInt(amt);
+document.getElementById('transferButton').addEventListener('click', 
+    function(even){
         const transferNum = document.getElementById('transferNum').value;
-        const Pin = document.getElementById('transferPin').value;
-        const transferAmt = document.getElementById('transferAmount').value;
-        const transferAmount = parseInt(transferAmt);
+        const transferAmount = valueById('transferAmount');
+        const pin = valueById('transferPin');
+        const amount = innerTextById('amount');
 
         if(transferNum.length === 11){
-            if(Pin == 1234){
+            if(pin === 1234){
                 if(transferAmount > 0 && amount >= transferAmount){
                     document.getElementById('amount').innerText = amount - transferAmount;
                     document.getElementById('transferAmount').value = '';
-                    alert('Transfer Successfully')
+                    alert('Cash-Out Successfully')
                 } else {
                     alert('Invalid Amount')
                     document.getElementById('transferAmount').value = '';
