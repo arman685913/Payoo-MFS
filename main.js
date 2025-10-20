@@ -116,28 +116,11 @@ document.getElementById('bonusButton').addEventListener('click',
     function(){
         const coupon = valueById('couponNo');
         const amount = innerTextById('amount');
-        if(coupon <= 5 && 1 >= coupon){
-            if(coupon === 1){
-                document.getElementById('amount').innerText = amount + 1000;
-                document.getElementById('couponNo').value = '';
-                alert('You received a bonus of 1000 taka.');
-            } else if(coupon === 2){
-                document.getElementById('amount').innerText = amount + 2000;
-                document.getElementById('couponNo').value = '';
-                alert('You received a bonus of 2000 taka.');
-            } else if(coupon === 3){
-                document.getElementById('amount').innerText = amount + 3000;
-                document.getElementById('couponNo').value = '';
-                alert('You received a bonus of 3000 taka.');
-            } else if(coupon === 4){
-                document.getElementById('amount').innerText = amount + 4000;
-                document.getElementById('couponNo').value = '';
-                alert('You received a bonus of 4000 taka.');
-            } else {
-                document.getElementById('amount').innerText = amount + 5000;
-                document.getElementById('couponNo').value = '';
-                alert('You received a bonus of 5000 taka.');
-            }
-        } else{ alert('Please enter your coupon number between 1 and 5.')}
+        if(coupon >= 1 && coupon <= 5){
+            const bonus = coupon * 1000;
+            document.getElementById('amount').innerText =amount + bonus;
+            document.getElementById('couponNo').value = '';
+            alert('You received a bonus of taka.' + bonus);
+        } else{alert('Please enter your coupon number between 1 and 5.')};
     }
 )
