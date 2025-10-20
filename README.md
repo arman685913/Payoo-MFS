@@ -1,14 +1,14 @@
-Payoo MFS
+# Payoo MFS
 
 A lightweight, modern Mobile Financial Service (MFS) demo application — showcasing transaction flows, balance management, contacts, and bill payments.  
-👉 Live Demo: Payoo MFS on GitHub Pages
+## Live Demo: Payoo MFS on GitHub Pages
 https://arman685913.github.io/Payoo-MFS/ 
 
 👉 Repository: GitHub Repo 
 https://github.com/arman685913/Payoo-MFS.git
 ---
 
-📌 Overview
+## Overview
 
 - Purpose: Demonstrates the UI/UX and basic interaction flows of an MFS app.  
 - Target Audience: Developers and students exploring fintech UI patterns.  
@@ -17,7 +17,7 @@ https://github.com/arman685913/Payoo-MFS.git
 
 ---
 
-Features
+## Features
 
 - Onboarding: Login & PIN verification demo screens.  
 - Dashboard: Balance overview, quick action cards, recent transactions.  
@@ -28,7 +28,7 @@ Features
 
 ---
 
- Tech Stack
+ ## Tech Stack
 
 - Frontend: HTML, CSS (or Tailwind/SCSS), JavaScript  
 - Deployment: GitHub Pages  
@@ -36,7 +36,7 @@ Features
 
 ---
 
- Project Structure (Suggested)
+## Project Structure (Suggested)
 
 `
 Payoo-MFS/
@@ -62,7 +62,7 @@ Payoo-MFS/
 
 ---
 
-⚡ Installation & Run
+## Installation & Run
 
 `bash
 
@@ -81,7 +81,7 @@ Or simply open index.html with a Live Server
 
 ---
 
- Usage Guide
+ ## Usage Guide
 
 - Login/PIN: Enter PIN → Redirects to Dashboard.  
 - Send Money: Select recipient → Enter amount → Confirm → Success toast.  
@@ -90,7 +90,7 @@ Or simply open index.html with a Live Server
 
 ---
 
- Development Notes
+ ## Development Notes
 
 - UI Consistency: Buttons, loaders, error messages should follow a standard style.  
 - Accessibility: Keyboard navigation, aria-labels, proper contrast.  
@@ -99,7 +99,7 @@ Or simply open index.html with a Live Server
 
 ---
 
- Roadmap
+ ## Roadmap
 
 - Phase 1: UI polish, transaction filters, standardized modals.  
 - Phase 2: Mock API integration, error/retry handling.  
@@ -108,7 +108,7 @@ Or simply open index.html with a Live Server
 
 ---
 
- Contribution Guidelines
+ ## Contribution Guidelines
 
 - Branching: feature/..., fix/...  
 - Commits: Short and meaningful messages.  
@@ -116,13 +116,7 @@ Or simply open index.html with a Live Server
 - Issues: Provide reproduction steps for bugs or clear details for feature requests.  
 
 ---
- License
-
-This project is licensed under the MIT License. See the LICENSE file for details.  
-
----
-
- Author
+ ## Author
 
 - Developer: Arman  
 - Inspiration: Common fintech UX patterns and mobile-first design.  
