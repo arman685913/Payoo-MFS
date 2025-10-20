@@ -1,10 +1,11 @@
 Payoo MFS
 
 A lightweight, modern Mobile Financial Service (MFS) demo application — showcasing transaction flows, balance management, contacts, and bill payments.  
-👉 Live Demo: Payoo MFS on GitHub Pages  https://github.com/arman685913/Payoo-MFS.git
+👉 Live Demo: Payoo MFS on GitHub Pages
+https://arman685913.github.io/Payoo-MFS/ 
 
-👉 Repository: GitHub Repo https://arman685913.github.io/Payoo-MFS/
-
+👉 Repository: GitHub Repo 
+https://github.com/arman685913/Payoo-MFS.git
 ---
 
 📌 Overview
